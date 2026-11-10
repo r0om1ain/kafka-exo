@@ -1,0 +1,6 @@
+# Le port 9000 du Mac est déjà pris (ClickHouse) : on ne publie que l'interface web du namenode.
+# Dans les conteneurs, HDFS reste joignable sur hdfs://namenode:9000.
+services:
+  namenode:
+    ports: !override
+      - "9870:9870"
